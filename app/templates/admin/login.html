@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='admin/css/login_admin.css') }}"/>
+  
+  {% if title %}
+  <title>Pizza - {{ title }}</title>
+  {% else %}
+  <title>Pizza App</title>
+  {% endif %}
+</head>
+<body>
+  <main>
+    <div class="main--entrada" id="cadastro">
+      <!-- Flash messages -->
+      <div class="flash-messages">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+      </div>
+      <div class="main--card" id="cadastro">
+        <h1>Acessar Pizza Blue</h1>
+        <form action="" method="post" novalidate>
+          {{ form.hidden_tag() }}
+          <div>
+            {{ form.username.label }} <br>
+            {{ form.username(size=32) }} <br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">-- {{ error }}---</span>
+            {% endfor %}
+          </div>
+          <div>
+            {{ form.password.label}} <br>
+            {{ form.password(size=32) }} <br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">-- {{ error }}---</span>
+            {% endfor %}
+          </div>
+          <div>
+            <label class="check-container">
+              Lembrar de mim
+              {{ form.remember_me() }}
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div>{{ form.submit() }}</div>
+        </form>
+        <hr>
+        <div class="main--btn">
+          <a href="{{ url_for('index') }}">Cancelar</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'admin/admin_layout.html' %}
+
+{% block content %}
+<div class="main--lista" id="tabela--pizzas">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Sabor</th>
+        <th>Tamanho</th>
+        <th>Preço</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pizza in pizzas %}
+        <tr>
+          <td>{{ pizza.id }}</td>
+          <td>{{ pizza.pizza_name }}</td>
+          <td>{{ pizza.size }}</td>
+          <td>{{ "R$ {:,.2f}".format(pizza.price) }}</td>
+          <td>
+            <a href="{{ url_for('editPizza', id = pizza.id) }}" >
+              <i class="fas fa-edit"></i>
+            </a>
+            <a href="{{ url_for('modalDelete', id = pizza.id) }}"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% if pizza != undefined %}
+    <section class="modal">
+      <div id="modal-delete">
+    
+        <a href="{{ url_for('pizzas') }}" id="fechar"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <h2>Confirmação</h2>
+        <hr>
+    
+        <p>Deseja realmente apagar?</p>
+        <div id="btns">
+            <a class="btn-cancelar" href="{{ url_for('pizzas') }}">Cancelar</a>
+            <a class="btn-apagar" href="{{ url_for('delete', id = pizza.id) }}">Apagar</a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}

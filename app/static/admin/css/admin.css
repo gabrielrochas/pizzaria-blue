@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@900&family=Roboto&display=swap');
+
+/*-----------------CORPO PRINCIPAL-----------------------------------------------------*/
+body {
+    margin: 0px;
+    padding: 0px;
+    /* background-color:#CF3D27; */
+    background-color: #EA4D35;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    /* border: 1px solid black; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----------------MENU LATERAL----------------------------------------------------------------*/
+/*estilos do menu lateral*/
+#check {
+    display: none;
+}
+
+/* #icone {
+    display: block;
+    width: -300px;
+    cursor: pointer;
+    margin: 17px 0 0 17px;
+    position: absolute;
+    z-index: 1;
+    background-color: #EA4D35;
+} */
+
+/* Menu icon */
+.menu-icon {
+  margin: 17px 0 0 17px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 7px);
+  transform: rotate(-45deg) translate(-9px, 7px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -7px);
+  transform: rotate(45deg) translate(-8px, -7px);
+}
+
+/* End menu icon */
+
+.barra {
+    background-color: #EA4D35;
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    transition: all .2s linear;
+    left: -300px;
+    opacity: 100%;
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.link {
+    /* background-color: #494950; */
+    /* background-color:#CF3D27; */
+    background-color: #f0644e;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt;
+    font-weight: 900;
+    transition: all .2s linear;
+    color: #f4f4f9;
+    /* border-bottom: 2px solid white; */
+    /* opacity: 0; */
+    /* margin-top: 200px; */
+}
+
+.link:hover {
+    /* background-color: #050542; */
+    background-color:#CF3D27;
+    border-right: 1px solid #CF3D27;
+}
+
+/*animação do menu lateral*/
+#check:checked ~ .barra {
+    transform: translateX(300px);
+    /* border-right: 1px solid #CF3D27; */
+}
+
+#check:checked ~ .barra nav a .link {
+    opacity: 1;
+    margin-top: 0;
+    /* transition-delay: .2s; */
+}
+
+/*---------------------DIV DE CADASTRO DE PIZZA E CADASTRO DE ADMIN----------------------------------*/
+hr {
+    border: 0px;
+    border-top: 1px solid #dadde1;
+    margin-bottom: 20px;
+}
+
+.main--container {
+    /* border: 1px solid black; */
+    max-width: 1000px;
+    height: calc(100vh - 250px);
+    padding: 0px 50px;
+    /* display: flex; */
+    align-items: center;
+}
+
+.main--entrada {
+    /* border: 1px solid black; */
+    /* display: flex; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.main--card {
+    background-color: white;
+    border-radius: 7px;
+    /* box-shadow: 0px 5px 10px white; */
+    width: 600px;
+    padding: 15px;
+    text-align: center;
+}
+
+.main--card input {
+    width: 90%;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.main--card button {
+    width: 100%;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    background-color: #EA4D35;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.main--card button:hover {
+    background-color: #42b72a;
+}
+
+.main--btn {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.main--btn a {
+    /* border: 1px solid black; */
+    max-width: 50%;
+    text-decoration: none;
+    background-color: #EA4D35;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.main--btn a:hover {
+    /* background-color:#CF3D27; */
+    background-color: red;
+}
+
+.main--card #submit {
+    width: 100%;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    background-color: #EA4D35;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.main--card #submit:hover {
+    background-color: #42b72a;
+}
+
+.main--btn {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.main--btn a {
+    /* border: 1px solid black; */
+    max-width: 50%;
+    text-decoration: none;
+    background-color: #EA4D35;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.main--btn a:hover {
+    /* background-color:#CF3D27; */
+    background-color: red;
+}
+
+form div {
+    text-align: left;
+}
+
+.sim--nao {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    margin-bottom: 10px;
+}
+
+#text--area {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+
+#text--area textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#nome--sobrenome {
+    /* border: 1px solid black; */
+    display: flex;
+}
+
+#nome--sobrenome input {
+    width: 70%;
+}
+
+#sobrenome {
+    display: flex;
+    flex-direction: column;
+}
+
+#sobrenome input {
+    width: 157%;
+}
+
+/*---------------------DIV DE TABELA DE PIZZAS---------------------------------------------------*/
+#tabela--pizzas {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding: 6rem;
+    overflow-x: auto;
+}
+
+#tabela--pizzas table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 3rem;
+    background-color: #fff;
+    width: 65%;
+    /* box-shadow: rgba(149, 157, 165, .5) 0px 8px 24px; */
+    border-radius: 1rem;
+}
+
+#tabela--pizzas table th, td {
+  padding: 1rem;
+  /* border-bottom: 1px solid #ddd; */
+  text-align: left;
+}
+
+#tabela--pizzas table td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#tabela--pizzas table a {
+  padding: 1rem;
+  /* color: #0066ff; */
+  color: #EA4D35;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#tabela--pizzas table a:hover{
+    color: #aacbfb;
+}
+
+/*-----------------DIV DE TABELAS DE PEDIDOS-------------------------------------------------------*/
+#tabela--pedidos {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding: 6rem;
+    overflow-x: auto;
+}
+
+#tabela--pedidos table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 3rem;
+    background-color: #fff;
+    width: 65%;
+    /* box-shadow: rgba(149, 157, 165, .5) 0px 8px 24px; */
+    border-radius: 1rem;
+}
+
+#tabela--pedidos table th, td {
+  padding: 1rem;
+  /* border-bottom: 1px solid #ddd; */
+  text-align: left;
+}
+
+#tabela--pedidos table td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#tabela--pedidos table a {
+  padding: 1rem;
+  /* color: #0066ff; */
+  color: #EA4D35;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#tabela--pedidos table a:hover{
+    color: #aacbfb;
+}
+
+/* Check box */
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+  background-color: #EA4D35;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
+  background-color: #42b72a;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-container .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Style ul flash messages */
+.flash-messages ul{
+  list-style-type: none;
+}
+
+.select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.select-box {
+  /* A reset of styles, including removing the default dropdown arrow */
+  appearance: none;
+  /* Additional resets for further consistency */
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 0.45em 0.5em;
+  margin: 0;
+  width: 95%;
+  cursor: pointer;
+}
+
+.select-box select{
+  padding: 5px 8px;
+}
+
+.select-box select:focus{
+  outline: none;
+}
+
+
+section.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #00000080;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+
+section.modal div#modal-delete{
+  width: 30rem;
+  position: relative;
+  background-color: #fff;
+  border-radius: .5rem;
+}
+
+section.modal div#modal-delete h2{
+  padding: 2rem;
+  margin: 0;
+  color: #ff0000;
+}
+
+section.modal div#modal-delete a#fechar{
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 2rem;
+  color: #ff0000;
+  padding: 1.5rem;
+}
+
+section.modal div#modal-delete a#fechar:hover{
+  color: #ff0000;
+}
+
+section.modal div#modal-delete hr{
+  width: 90%;
+  margin: 0 auto;
+}
+
+section.modal div#modal-delete p{
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+section.modal div#modal-delete div#btns{
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem 2rem 2rem;
+}
+
+section.modal div#modal-delete div#btns a{
+  text-decoration: none;
+  padding: .9rem;
+  border-radius: .5rem;
+  width: 7rem;
+  text-align: center;
+}
+
+section.modal div#modal-delete div#btns a.btn-cancelar{
+  background-color: #fff;
+  color: #ff0101;
+  border: solid 1px #dd4242;
+  margin-right: 1rem;
+  transition: all .5s ease-out;
+}
+
+section.modal div#modal-delete div#btns a.btn-cancelar:hover{
+  background-color: #740808;
+  color: #fff;
+}
+
+section.modal div#modal-delete div#btns a.btn-apagar{
+  background-color: #ff0000;
+  color: #fff;
+  border: solid 1px 740808;
+  transition: all .5s ease-out;
+}
+
+section.modal div#modal-delete div#btns a.btn-apagar:hover{
+  background-color: rgb(107, 3, 3);
+  color: #fff;
+}

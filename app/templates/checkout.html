@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Carrinho</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+    <main>
+      <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+          <div class="text-center text-white">
+            <img src="../static/img/logo245.png" alt="">
+            <!-- <h1 class="display-4 fw-bolder"> </h1> -->
+            <p class="lead fw-normal text-white-50 mb-0"></p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Carrinho</span>          
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Produtos Selecionados</h6>
+              <div id="itens"> </div>
+              <div>Total: <span id="total"></span> </div>
+              <button href="../index.html" class="w-100 btn btn-danger btn-lg" type="button" onclick=" localStorage.clear(); location.reload();"> Limpar carrinho </button>
+          </li>
+        </ul>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Informções Gerais</h4>
+          <form class="needs-validation" action="" method="POST" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Nome</label>
+                {{ form.person_name(class='form-control', placeholder='Nome') }}
+                <!-- <input type="text" class="form-control" id="firstName" placeholder="" value="" required> -->
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Sobrenome</label>
+                {{ form.lastname(class='form-control', placeholder='Sobrenome') }}
+                <!-- <input type="text" class="form-control" id="lastName" placeholder="" value="" required> -->
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="address" class="form-label">Endereço</label>
+                {{ form.address(class='form-control', placeholder='Endereço') }}
+                <!-- <input type="text" class="form-control" id="address" placeholder="Digite seu endereço" required> -->
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="address2" class="form-label">Telefone <span class="text-muted"></span></label>
+                {{ form.phone(class='form-control', placeholder='Telefone') }}
+                <!-- <input type="text" class="form-control" id="address2" placeholder="Digite seu telene"> -->
+              </div>
+              <hr class="my-4">
+              <h4 class="mb-3">Forma de Pagamento</h4>
+              <div class="my-3">
+                <div class="form-check">
+                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                  <label class="form-check-label" for="credit">Cartão de Crédito</label>
+                </div>
+                <div class="form-check">
+                  <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                  <label class="form-check-label" for="debit">Cartão de Débito</label>
+                </div>
+                <div class="form-check">
+                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                  <label class="form-check-label" for="paypal">Dinheiro</label>
+                </div>
+              </div>
+              <hr class="my-4">
+              {{ form.submit(class='w-100 btn btn-danger btn-lg') }}
+              <!-- <button class="w-100 btn btn-danger btn-lg" type="submit">Finalizar Pedido</button> -->
+          </form>
+          </div>
+        </div>
+    </main>
+    </div>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <script>
+    var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
+    var i = 0;     // variável que irá percorrer as posições
+    var valor = 0; // variável que irá receber o preço do produto convertido em Float.
+    
+    for(i=1; i<=99; i++) // verifica até 99 produtos registrados na localStorage
+    {
+      var prod = localStorage.getItem("produto" + i + ""); // verifica se há recheio nesta posição. 
+      if(prod != null) 
+      {	
+        // exibe os dados da lista dentro da div itens
+        document.getElementById("itens").innerHTML += localStorage.getItem("qtd" + i) + " x ";
+        document.getElementById("itens").innerHTML += localStorage.getItem("produto" + i);
+        document.getElementById("itens").innerHTML += " ";
+        document.getElementById("itens").innerHTML += "R$: " + localStorage.getItem("valor" + i) + "<hr>";
+        
+        // calcula o total dos recheios
+        valor = parseFloat(localStorage.getItem("valor" + i)); // valor convertido com o parseFloat()
+        total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
+      }
+    } 
+    // exibe o total dos recheios
+    document.getElementById("total").innerHTML = total.toFixed(2); 
+  </script>
+</html>

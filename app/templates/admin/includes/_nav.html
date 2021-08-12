@@ -1,0 +1,12 @@
+<div>
+  Pizza -- 
+  <a href="{{ url_for('dashboard') }}">Dashboard</a>
+  {% if current_user.is_anonymous %}
+  <a href="{{ url_for('dashboardLogin') }}">Login</a>
+  {% else %}
+  <a href="{{ url_for('pizzas') }}">Pizzas</a>
+  <a href="{{ url_for('userAdmin', username=current_user.username) }}">Perfil</a>
+  <a href="{{ url_for('dashboardLogout') }}">Sair</a>
+  {% endif %}
+</div>
+<hr>

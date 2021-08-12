@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='admin/css/admin.css') }}">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+  {% if title %}
+  <title>Pizza - {{ title }}</title>
+  {% else %}
+  <title>Pizza App</title>
+  {% endif %}
+  
+
+</head>
+<body>
+  <!-- Main menu -->
+  {% include 'admin/includes/_sidebar.html' %}
+  <!-- Content -->
+  <main>
+    {% block content %}
+      <!-- Flash messages -->
+      <div class="flash-messages">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+      </div>
+      
+    {% endblock %}
+  </main>
+  
+  <script>
+    function menuFunc(x) {
+      x.classList.toggle("change");
+    }
+  </script>
+  <script src="{{ url_for('static', filename='admin/js/font.js') }}" ></script>
+  <!-- <script src="{{ url_for('static', filename='admin/js/validas.js') }}" ></script> -->
+  
+</body>
+</html>

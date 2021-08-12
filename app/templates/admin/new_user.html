@@ -1,0 +1,50 @@
+{% extends 'admin/admin_layout.html' %}
+{% block content %}
+<!-- DIV de cadastro de admin -->
+<div class="main--entrada" id="cadastro--admin">
+  <div class="main--card" id="cadastro">
+    <form action="" method="POST">
+      {{ form.hidden_tag() }}
+      <div id="nome--sobrenome">
+        <div id="nome">
+          {{ form.person_name.label }}<br>
+          {{ form.person_name(placeholder='Nome') }}<br>
+          {% for error in form.person_name.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div id="sobrenome">
+          {{ form.lastname.label }}<br>
+          {{ form.lastname(placeholder='Sobrenome') }}<br>
+          {% for error in form.lastname.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        {{ form.email.label }}<br>
+        {{ form.email(placeholder='Email') }}<br>
+        {% for error in form.email.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div>
+        {{ form.phone.label }}<br>
+        {{ form.phone(placeholder='Telefone') }}<br>
+        {% for error in form.phone.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div>
+        {{ form.address.label }}<br>
+        {{ form.address(placeholder='Telefone') }}<br>
+        {% for error in form.address.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      <p>{{ form.submit() }}</p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

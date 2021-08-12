@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Section-->
+<section>
+  <div class="container main-container" id="mid">
+
+      <div class="row">
+          
+          <!-- FALE CONOSCO -->
+          <div class="main--entrada" id="cadastro--admin">
+              <div class="main--card" id="cadastro">
+                  <form class="form-fale">
+                      <div id="nome--sobrenome">
+                          <div id="nome">
+                              <label for="nome">Nome: </label>
+                              <input class="form-control" type="text" name="nome" placeholder="Insira o nome" id="nome">
+                          </div>
+                          
+                      </div>
+                      <div>
+                          <label for="email">E-mail: </label>
+                          <input class="form-control" type="email" name="email" placeholder="Insira o e-mail" id="email">
+                      </div>
+                      <div>
+                          <label for="telefone">Telefone: </label>
+                          <input class="form-control" type="tel" name="telefone" placeholder="Insira o telefone" id="telefone">
+                      </div>
+
+                      <div>
+                          <label for="endereco">Endereço: </label>
+                          <input class="form-control" type="te" name="endereco" placeholder="Insira o endereço" id="endereco">
+                      </div>
+
+                      <div>
+                          <label for="msg">Mensagem: </label>
+                          <textarea class="form-control"  type="text--area" name="endereco" placeholder="Digite aqui a sua Mensagem" id="msg" cols="58" rows="10"></textarea>
+                      </div>
+                      
+                      <div class="enviar">
+                      <button class="btn btn-danger" type="submit" >Enviar Mensagem</button>   
+                      </div>                           
+                  </form>
+  </div>
+</div>
+
+
+      </div>
+  </div>
+</section>
+{% endblock %}

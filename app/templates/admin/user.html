@@ -1,0 +1,12 @@
+{% extends 'admin/admin_layout.html' %}
+{% block header %}
+  <h4>
+    Header do usuário
+  </h4>
+{% endblock %}
+{% block content %}
+  <img src="{{ current_user.person.avatar(80) }}">
+  <h1>Perfil - {{ current_user.person.person_name }}</h1>
+  <a href="{{ url_for('editProfile') }}">Editar Perfil</a>
+  <p>Último acesso em {{ current_user.last_seen.strftime('%d/%m/%Y às %H:%M') }}</p>
+{% endblock %}

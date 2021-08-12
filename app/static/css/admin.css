@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@900&family=Roboto&display=swap');
+
+/*-----------------CORPO PRINCIPAL-----------------------------------------------------*/
+body {
+    margin: 0px;
+    padding: 0px;
+    /* background-color:#CF3D27; */
+    background-color: #EA4D35;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    /* border: 1px solid black; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----------------MENU LATERAL----------------------------------------------------------------*/
+/*estilos do menu lateral*/
+#check {
+    display: none;
+}
+
+#icone {
+    /* border: 1px solid black; */
+    display: block;
+    width: -300px;
+    cursor: pointer;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    background-color: #EA4D35;
+}
+
+.barra {
+    background-color: #EA4D35;
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    transition: all .2s linear;
+    left: -300px;
+    opacity: 100%;
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.link {
+    /* background-color: #494950; */
+    /* background-color:#CF3D27; */
+    background-color: #f0644e;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt;
+    font-weight: 900;
+    transition: all .2s linear;
+    color: #f4f4f9;
+    /* border-bottom: 2px solid white; */
+    /* opacity: 0; */
+    /* margin-top: 200px; */
+}
+
+.link:hover {
+    /* background-color: #050542; */
+    background-color:#CF3D27;
+    border-right: 1px solid #CF3D27;
+}
+
+/*animação do menu lateral*/
+#check:checked ~ .barra {
+    transform: translateX(300px);
+    /* border-right: 1px solid #CF3D27; */
+}
+
+#check:checked ~ .barra nav a .link {
+    opacity: 1;
+    margin-top: 0;
+    /* transition-delay: .2s; */
+}
+
+/*---------------------DIV DE CADASTRO DE PIZZA E CADASTRO DE ADMIN----------------------------------*/
+hr {
+    border: 0px;
+    border-top: 1px solid #dadde1;
+    margin-bottom: 20px;
+}
+
+.main--container {
+    /* border: 1px solid black; */
+    max-width: 1000px;
+    height: calc(100vh - 250px);
+    padding: 0px 50px;
+    /* display: flex; */
+    align-items: center;
+}
+
+.main--entrada {
+    /* border: 1px solid black; */
+    /* display: flex; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.main--card {
+    background-color: white;
+    border-radius: 7px;
+    /* box-shadow: 0px 5px 10px white; */
+    width: 600px;
+    padding: 15px;
+    text-align: center;
+}
+
+.main--card input {
+    width: 90%;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.main--card button {
+    width: 100%;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    background-color: #EA4D35;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.main--card button:hover {
+    background-color: #42b72a;
+}
+
+.main--btn {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.main--btn a {
+    /* border: 1px solid black; */
+    max-width: 50%;
+    text-decoration: none;
+    background-color: #EA4D35;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.main--btn a:hover {
+    /* background-color:#CF3D27; */
+    background-color: red;
+}
+
+form div {
+    text-align: left;
+}
+
+.sim--nao {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    margin-bottom: 10px;
+}
+
+#text--area {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+
+#text--area textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#nome--sobrenome {
+    /* border: 1px solid black; */
+    display: flex;
+}
+
+#nome--sobrenome input {
+    width: 70%;
+}
+
+#sobrenome {
+    display: flex;
+    flex-direction: column;
+}
+
+#sobrenome input {
+    width: 157%;
+}
+
+/*---------------------DIV DE TABELA DE PIZZAS---------------------------------------------------*/
+#tabela--pizzas {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding: 6rem;
+    overflow-x: auto;
+}
+
+#tabela--pizzas table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 3rem;
+    background-color: #fff;
+    width: 65%;
+    /* box-shadow: rgba(149, 157, 165, .5) 0px 8px 24px; */
+    border-radius: 1rem;
+}
+
+#tabela--pizzas table th, td {
+  padding: 1rem;
+  /* border-bottom: 1px solid #ddd; */
+  text-align: left;
+}
+
+#tabela--pizzas table td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#tabela--pizzas table a {
+  padding: 1rem;
+  /* color: #0066ff; */
+  color: #EA4D35;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#tabela--pizzas table a:hover{
+    color: #aacbfb;
+}
+
+/*-----------------DIV DE TABELAS DE PEDIDOS-------------------------------------------------------*/
+#tabela--pedidos {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding: 6rem;
+    overflow-x: auto;
+}
+
+#tabela--pedidos table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 3rem;
+    background-color: #fff;
+    width: 65%;
+    /* box-shadow: rgba(149, 157, 165, .5) 0px 8px 24px; */
+    border-radius: 1rem;
+}
+
+#tabela--pedidos table th, td {
+  padding: 1rem;
+  /* border-bottom: 1px solid #ddd; */
+  text-align: left;
+}
+
+#tabela--pedidos table td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#tabela--pedidos table a {
+  padding: 1rem;
+  /* color: #0066ff; */
+  color: #EA4D35;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#tabela--pedidos table a:hover{
+    color: #aacbfb;
+}

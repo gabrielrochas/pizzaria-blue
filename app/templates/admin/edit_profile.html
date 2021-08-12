@@ -1,0 +1,66 @@
+{% extends 'admin/admin_layout.html' %}
+{% block content %}
+<!-- DIV de cadastro de admin -->
+<div class="main--entrada" id="cadastro--admin">
+  <div class="main--card" id="cadastro">
+    <form action="" method="POST">
+      {{ form.hidden_tag() }}
+      <div id="nome--sobrenome">
+        <div>
+          {{ form.username.label }}<br>
+          {{ form.username }}<br>
+          {% for error in form.username.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <p>
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}<br>
+        {% for error in form.password.errors %}
+        <span style="color: red">-- {{ error }} --</span>
+        {% endfor %}
+      </p>
+      <div id="nome--sobrenome">
+        <div id="nome">
+          {{ form_profile.person_name.label }}<br>
+          {{ form_profile.person_name(placeholder='Nome') }}<br>
+          {% for error in form_profile.person_name.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div id="sobrenome">
+          {{ form_profile.lastname.label }}<br>
+          {{ form_profile.lastname(placeholder='Sobrenome') }}<br>
+          {% for error in form_profile.lastname.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        {{ form_profile.email.label }}<br>
+        {{ form_profile.email(placeholder='Email') }}<br>
+        {% for error in form_profile.email.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div>
+        {{ form_profile.phone.label }}<br>
+        {{ form_profile.phone(placeholder='Telefone') }}<br>
+        {% for error in form_profile.phone.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div>
+        {{ form_profile.address.label }}<br>
+        {{ form_profile.address(placeholder='Telefone') }}<br>
+        {% for error in form_profile.address.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      <p>{{ form.submit() }}</p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

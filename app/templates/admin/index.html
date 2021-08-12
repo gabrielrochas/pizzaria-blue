@@ -1,0 +1,12 @@
+{% extends 'admin/admin_layout.html' %}
+
+{% block header %}
+  <h4>
+    Header
+  </h4>
+{% endblock %}
+
+{% block content %}
+<img src="{{ current_user.person.avatar(80) }}">
+  <h1>Bem vindo de volta, {{ current_user.person.person_name }}</h1>
+{% endblock %}
